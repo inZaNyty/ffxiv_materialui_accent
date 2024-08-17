@@ -3,7 +3,7 @@
     "Author": "Sevii77 / inZaNyty",
     "Name": "Material UI",
     "Description": "Auto updating Material UI with customizable accent color and more. Icon by Mek. Updated for Dawntrail by inZaNyty.",
-    "InternalName": "MaterialUI-DTupdate",
+    "InternalName": "MaterialUIDTupdate",
     "AssemblyVersion": "1.4.15",
     "TestingAssemblyVersion": "1.4.15",
     "RepoUrl": "https://github.com/inZaNyty/ffxiv_materialui_accent",
