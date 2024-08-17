@@ -30,14 +30,15 @@ namespace MaterialUI {
 			// accentOnly = main.config.accentOnly;
 			colorAccent = main.config.color;
 			colorOptions = new Vector3[0];
-			
-			main.pluginInterface.IUiBuilder.Draw += Draw;
-			main.pluginInterface.IUiBuilder.OpenConfigUi += ShowSettings;
+
+            IDalamudPluginInterface pluginInterface = main.pluginInterface;
+            pluginInterface.UiBuilder.Draw += Draw;
+            pluginInterface.UiBuilder.OpenConfigUi += ShowSettings;
 		}
 		
 		public void Dispose() {
-			main.pluginInterface.IUiBuilder.Draw -= Draw;
-			main.pluginInterface.IUiBuilder.OpenConfigUi -= ShowSettings;
+			main.pluginInterface.UiBuilder.Draw -= Draw;
+			main.pluginInterface.UiBuilder.OpenConfigUi -= ShowSettings;
 		}
 		
 		public void ShowSettings() {

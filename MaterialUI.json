@@ -1,0 +1,26 @@
+{
+  "Author": "Sevii77 / inZaNyty",
+  "Name": "Material UI",
+  "InternalName": "MaterialUI",
+  "AssemblyVersion": "1.4.13.0",
+  "Description": "Auto updating Material UI with customizable accent color and more. Icon by Meconate",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "ui",
+    "penumbra",
+    "material",
+    "skotlex",
+    "sevii",
+    "accent",
+    "color",
+    "inzanyty"
+  ],
+  "DalamudApiLevel": 10,
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "CanUnloadAsync": false,
+  "LoadPriority": 1,
+  "IconUrl": "https://raw.githubusercontent.com/inZaNyty/ffxiv_materialui_accent/master/images/icon.png",
+  "Punchline": "Auto updating Material UI with customizable colors.",
+  "AcceptsFeedback": true
+}
