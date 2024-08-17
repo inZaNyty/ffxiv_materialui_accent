@@ -31,13 +31,13 @@ namespace MaterialUI {
 			colorAccent = main.config.color;
 			colorOptions = new Vector3[0];
 			
-			main.pluginInterface.UiBuilder.Draw += Draw;
-			main.pluginInterface.UiBuilder.OpenConfigUi += ShowSettings;
+			main.pluginInterface.IUiBuilder.Draw += Draw;
+			main.pluginInterface.IUiBuilder.OpenConfigUi += ShowSettings;
 		}
 		
 		public void Dispose() {
-			main.pluginInterface.UiBuilder.Draw -= Draw;
-			main.pluginInterface.UiBuilder.OpenConfigUi -= ShowSettings;
+			main.pluginInterface.IUiBuilder.Draw -= Draw;
+			main.pluginInterface.IUiBuilder.OpenConfigUi -= ShowSettings;
 		}
 		
 		public void ShowSettings() {

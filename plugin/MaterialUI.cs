@@ -14,13 +14,13 @@ namespace MaterialUI {
 		
 		public string penumbraIssue {get; private set;} = null;
 		
-		public DalamudPluginInterface pluginInterface {get; private set;}
+		public IDalamudPluginInterface pluginInterface {get; private set;}
 		public ICommandManager commandManager {get; private set;}
 		public UI ui {get; private set;}
 		public Config config {get; private set;}
 		public Updater updater {get; private set;}
 		
-		public MaterialUI(DalamudPluginInterface pluginInterface, ICommandManager commandManager) {
+		public MaterialUI(IDalamudPluginInterface pluginInterface, ICommandManager commandManager) {
 			this.pluginInterface = pluginInterface;
 			this.commandManager = commandManager;
 			
@@ -28,7 +28,7 @@ namespace MaterialUI {
 			updater = new Updater(this);
 			ui = new UI(this);
 			
-			commandManager.AddHandler(command, new CommandInfo(OnCommand) {
+			commandManager.AddHandler(command, new IReadOnlyCommandInfo(OnCommand) {
 				HelpMessage = "Opens the Material UI configuration window"
 			});
 			
@@ -58,7 +58,7 @@ namespace MaterialUI {
 			try {
 				pluginInterface.GetIpcSubscriber<(int, int)>("Penumbra.ApiVersions").InvokeFunc();
 			} catch(Exception e) {
-				PluginLog.Error("Penumbra.ApiVersions failed", e);
+				IPluginLog.Error("Penumbra.ApiVersions failed", e);
 				penumbraIssue = "Penumbra not found.";
 				
 				return;

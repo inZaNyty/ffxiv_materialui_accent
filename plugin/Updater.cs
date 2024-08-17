@@ -128,10 +128,10 @@ namespace MaterialUI {
 		public PenumbraMeta() {
 			FileVersion = 3;
 			Name = "Material UI";
-			Author = "Sevii, skotlex";
+			Author = "Sevii, skotlex, inZaNyty";
 			Description = "";
 			Version = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
-			Website = "https://github.com/Sevii77/ffxiv_materialui_accent";
+			Website = "https://github.com/inZaNyty/ffxiv_materialui_accent";
 			// FileSwaps = new Dictionary<string, string>();
 			// Groups = new Dictionary<string, MetaGroup>();
 		}
@@ -155,7 +155,8 @@ namespace MaterialUI {
 	
 	public class Updater {
 		public const string repoMaster = "skotlex/ffxiv-material-ui";
-		public const string repoAccent = "sevii77/ffxiv_materialui_accent";
+		//public const string repoAccent = "sevii77/ffxiv_materialui_accent";
+		public const string repoAccent = "inZaNyty/ffxiv_materialui_accent";
 		
 		private HttpClient httpClient;
 		private MaterialUI main;
@@ -421,7 +422,7 @@ namespace MaterialUI {
 								modRepo.Key,
 								options,
 								mod.Value,
-								mod.Value.files.ContainsKey("preview.png") ? main.pluginInterface.UiBuilder.LoadImage(await GetBytesAsync(mod.Value.files["preview.png"].Item2)) : null
+								mod.Value.files.ContainsKey("preview.png") ? main.pluginInterface.IUiBuilder.LoadImage(await GetBytesAsync(mod.Value.files["preview.png"].Item2)) : null
 							);
 						
 						if(!main.config.modOptions.ContainsKey(mod.Key))
